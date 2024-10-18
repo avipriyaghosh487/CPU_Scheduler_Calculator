@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CPU Scheduling Algorithms</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>CPU Scheduling Algorithms</h1>
+    <form id="process-form">
+      <div class="form-group">
+        <label for="process-id">Process ID:</label>
+        <input type="text" id="process-id" required>
+      </div>
+      <div class="form-group">
+        <label for="arrival-time">Arrival Time:</label>
+        <input type="number" id="arrival-time" required>
+      </div>
+      <div class="form-group">
+        <label for="burst-time">Burst Time:</label>
+        <input type="number" id="burst-time" required>
+      </div>
+      <button type="submit">Add Process</button>
+    </form>
+    <div id="process-list">
+      <h2>Processes</h2>
+      <ul id="processes"></ul>
+    </div>
+    <div id="algorithms">
+      <h2>Algorithms</h2>
+      <button onclick="schedule('FCFS')">FCFS</button>
+      <button onclick="schedule('SJF')">SJF</button>
+      <button onclick="schedule('RR')">Round Robin</button>
+    </div>
+    <div id="metrics">
+      <h2>Metrics</h2>
+      <table id="metrics-table">
+        <thead>
+          <tr>
+            <th>Process ID</th>
+            <th>Burst Time</th>
+            <th>Arrival Time</th>
+            <th>Completion Time</th>
+            <th>Turnaround Time</th>
+            <th>Waiting Time</th>
+          </tr>
+        </thead>
+        <tbody id="metrics-content"></tbody>
+      </table>
+      <p id="averages"></p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
